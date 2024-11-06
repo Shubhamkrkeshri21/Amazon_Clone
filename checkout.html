@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="icon" href="./assets/amazon_logo.png" type="image/x-icon">
+</head>
+<body>
+
+    <div class="checkout-container">
+        <div class="header">
+            <h1>Checkout</h1>
+        </div>
+
+        <div class="main-content">
+            <div class="address-selection">
+                <h2>1 Select a delivery address</h2>
+                <div id="address-list" class="address-list">
+                    <!-- Dynamic addresses will be added here -->
+                </div>
+                
+                <button class="add-address" onclick="toggleAddressForm()">+ Add a new address</button>
+                
+                <!-- Address input form -->
+                <div id="address-form" class="address-form" style="display: none;">
+                    <h3>Enter New Address</h3>
+
+                    <label>
+                        Name:
+                        <input type="text" id="name" required>
+                    </label>
+             <br>
+
+                    <label>
+                        Address:
+                        <textarea id="address" required></textarea>
+                    </label>
+                    <label>
+                        City:
+                        <input type="text" id="city" required>
+                    </label>
+                    <label>
+                        State:
+                        <input type="text" id="state" required>
+                    </label>
+                    <label>
+                        Postal Code:
+                        <input type="text" id="postal-code" required>
+                    </label>
+                    <button onclick="addAddress()">Add Address</button>
+                    <button onclick="toggleAddressForm()">Cancel</button>
+                </div>
+
+                <h2>Your pickup locations</h2>
+                <button class="use-address-btn">Use this address</button>
+            </div>
+
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-details">
+                    <p>Items:</p>
+                    <p>Delivery:</p>
+                    <p><strong>Order Total:</strong> ₹2,764.00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>// Function to toggle the address input form visibility
+        function toggleAddressForm() {
+            const form = document.getElementById("address-form");
+            form.style.display = form.style.display === "none" ? "block" : "none";
+        }
+        
+        // Function to add the new address entered by the user
+        function addAddress() {
+            // Get input values
+            const name = document.getElementById("name").value;
+            const address = document.getElementById("address").value;
+            const city = document.getElementById("city").value;
+            const state = document.getElementById("state").value;
+            const postalCode = document.getElementById("postal-code").value;
+        
+            // Create a new address element
+            const addressList = document.getElementById("address-list");
+            const addressOption = document.createElement("label");
+            addressOption.classList.add("address-option");
+        
+            addressOption.innerHTML = `
+                <input type="radio" name="address">
+                <div class="address-info">
+                    <strong>${name}</strong>
+                    <p>${address}, ${city}, ${state}, ${postalCode}, India</p>
+                    <a href="#">Edit address</a> | <a href="#">Add delivery instructions</a>
+                </div>
+            `;
+        
+            // Append the new address to the address list
+            addressList.appendChild(addressOption);
+        
+            // Reset the form fields
+            document.getElementById("name").value = "";
+            document.getElementById("address").value = "";
+            document.getElementById("city").value = "";
+            document.getElementById("state").value = "";
+            document.getElementById("postal-code").value = "";
+        
+            // Hide the form after adding the address
+            toggleAddressForm();
+        }
+        </script>
+</body>
+</html>

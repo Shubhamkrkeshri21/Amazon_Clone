@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f1f1f1;
+}
+
+.checkout-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    color: #ff9900;
+}
+
+.main-content {
+    display: flex;
+    gap: 20px;
+}
+
+.address-selection {
+    flex: 3;
+}
+
+.address-selection h2 {
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.address-list {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.address-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.address-option input[type="radio"] {
+    margin-top: 5px;
+}
+
+.address-info {
+    color: #555;
+}
+
+.address-info strong {
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.address-info p {
+    margin: 5px 0;
+}
+
+.address-info a {
+    color: #0073bb;
+    font-size: 0.9em;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.address-info a:hover {
+    text-decoration: underline;
+}
+
+.add-address {
+    background-color: #f7f7f7;
+    color: #555;
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 0.9em;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.use-address-btn {
+    background-color: #ff9900;
+    color: #fff;
+    padding: 10px;
+    font-size: 0.9em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.order-summary {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.order-summary h2 {
+    color: #333;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.summary-details {
+    color: #555;
+    font-size: 0.9em;
+}
+
+.summary-details p {
+    margin: 5px 0;
+}
+
+.summary-details strong {
+    font-size: 1.1em;
+    color: #333;
+}
