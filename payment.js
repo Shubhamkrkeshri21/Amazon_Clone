@@ -13,7 +13,7 @@ function goForOTP(event) {
 
         alert("Authentification Successful !")
         
-        window.location.href = "OTP.html"
+        window.location.href = "otp.html"
 
     }
     else {
